@@ -16,7 +16,7 @@ public class ThreadGUI extends Thread {
 	private JTextArea textField;//para atualizar a interface
 	private ThreadCliente thread;
 	private ServerSocket server;
-	
+
 	/**
 	 * Construtor
 	 * @param thread Thread a ser iniciada
@@ -28,13 +28,13 @@ public class ThreadGUI extends Thread {
 		this.thread = thread;
 		this.server = server;
 	}
-	
+
 	/**
 	 * Metodo Run da thread
 	 */
 	public void run(){
 		while(true){
-        	Socket cliente = null;
+			Socket cliente = null;
 			try {
 				cliente = server.accept();
 			} catch (IOException e) {
@@ -43,11 +43,11 @@ public class ThreadGUI extends Thread {
 			}
 			if(cliente!=null){//caso o cliente não seja nulo
 				thread = new ThreadCliente(server, textField, cliente);//passa parametros para thread como o socket server e a textArea
-		        thread.start();//inicia a thread
+				thread.start();//inicia a thread
 			}else{
 				System.out.println("erro cliente nulo");
 			}
-        }
+		}
 	}
 
 }
