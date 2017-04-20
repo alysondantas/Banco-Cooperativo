@@ -19,9 +19,9 @@ public class ThreadGUI extends Thread {
 	
 	/**
 	 * Construtor
-	 * @param thread
-	 * @param textField
-	 * @param server
+	 * @param thread Thread a ser iniciada
+	 * @param textField TextField do log
+	 * @param server Servidor para os clientes
 	 */
 	public ThreadGUI(ThreadCliente thread, JTextArea textField,ServerSocket server){
 		this.textField = textField;

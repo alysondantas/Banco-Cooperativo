@@ -19,10 +19,10 @@ public class Endereco implements Serializable {
 	
 	/**
 	 * Construtor
-	 * @param rua
-	 * @param num
-	 * @param cidade
-	 * @param estado
+	 * @param rua Rua do endereço
+	 * @param num Numero do endereço
+	 * @param cidade Cidade do endereço
+	 * @param estado Estado do endereço
 	 */
 	public Endereco(String rua, String num, String cidade, String estado){
 		this.setRua(rua);

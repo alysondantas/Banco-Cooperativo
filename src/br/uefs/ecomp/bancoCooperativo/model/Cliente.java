@@ -25,13 +25,13 @@ public class Cliente implements Serializable {
 	
 	/**
 	 * Construtor
-	 * @param nome
-	 * @param endereco
-	 * @param fisica
-	 * @param cpfCnpj
-	 * @param dataNasc
-	 * @param sexo
-	 * @param senha
+	 * @param nome Nome do cliente
+	 * @param endereco Endereço do cliente
+	 * @param fisica Verificador se é pessoa fisica ou juridica
+	 * @param cpfCnpj Cnpj ou CPF do cliente
+	 * @param dataNasc Data de nascimento ou fundação do cliente
+	 * @param sexo Sexo se for pessoa fisica
+	 * @param senha Senha do cliente
 	 */
 	public Cliente(String nome, Endereco endereco, boolean fisica,String cpfCnpj, String dataNasc, boolean sexo, String senha){
 		this.setNome(nome);

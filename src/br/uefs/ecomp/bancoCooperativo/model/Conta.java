@@ -23,9 +23,9 @@ public class Conta implements Serializable {
 	
 	/**
 	 * Construtor
-	 * @param numero
-	 * @param agencia
-	 * @param clientes
+	 * @param numero Numero da conta do cliente
+	 * @param agencia Agencia do cliente
+	 * @param clientes Lista de clientes que a conta possui
 	 */
 	public Conta(String numero, String agencia, List<String> clientes){
 		this.numero = numero;

@@ -525,6 +525,7 @@ public class BancoClientGUI {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
+				sairEdicao();
 				depositar();
 			}
 		});
@@ -648,6 +649,7 @@ public class BancoClientGUI {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				// TODO Auto-generated method stub
+				sairEdicao();
 				cadastrarClienteFisico();
 			}
 		});
@@ -739,6 +741,7 @@ public class BancoClientGUI {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
+				sairEdicao();
 				cadastrarClienteJuridico();
 			}
 		});
@@ -791,6 +794,7 @@ public class BancoClientGUI {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				// TODO Auto-generated method stub
+				sairEdicao();
 				criarConta();
 			}
 		});
@@ -1105,11 +1109,11 @@ public class BancoClientGUI {
 			entrada.close();
 			rec.close();//fecho comunicação com o servidor
 
-			if(recebido.equals("concluido")){//se concluiu com sucesso
+			if(resultado.equals("concluido")){//se concluiu com sucesso
 				JOptionPane.showMessageDialog(null,"Cliente alterado com sucesso.","Sucesso",2);
-			}else if(recebido.equals("camponaopreenchido")){//caso o campo não tenha sido preenchido
+			}else if(resultado.equals("camponaopreenchido")){//caso o campo não tenha sido preenchido
 				JOptionPane.showMessageDialog(null,"Campo não foi preenchido.","Erro",2);
-			}else if(recebido.equals("clientenaoencontrado")){//caso receba erro de cliente não encontrado
+			}else if(resultado.equals("clientenaoencontrado")){//caso receba erro de cliente não encontrado
 				JOptionPane.showMessageDialog(null,"Cliente não foi encontrado","Erro",2);
 			}
 			JOptionPane.showMessageDialog(null, "Recebido :" + resultado);//exibe o resultado recebido
@@ -1167,11 +1171,11 @@ public class BancoClientGUI {
 			entrada.close();
 			rec.close();//fecho a comunicação com o servidor
 
-			if(recebido.equals("concluido")){//se concluiu com sucesso
+			if(resultado.equals("concluido")){//se concluiu com sucesso
 				JOptionPane.showMessageDialog(null,"Cliente cadastrado com sucesso.","Sucesso",2);
-			}else if(recebido.equals("camponaopreenchido")){//caso o campo não tenha sido preenchido
+			}else if(resultado.equals("camponaopreenchido")){//caso o campo não tenha sido preenchido
 				JOptionPane.showMessageDialog(null,"Campo não foi preenchido.","Erro",2);
-			}else if(recebido.equals("clientejaexistente")){//caso receba erro de cliente ja cadastrado
+			}else if(resultado.equals("clientejaexistente")){//caso receba erro de cliente ja cadastrado
 				JOptionPane.showMessageDialog(null,"Cliente ja cadastrado","Erro",2);
 			}
 
@@ -1218,18 +1222,18 @@ public class BancoClientGUI {
 			entrada.close();
 			rec.close();//fecha comunicação com o servidor
 
-			if(recebido.equals("concluido")){//se concluiu com sucesso
+			if(resultado.equals("concluido")){//se concluiu com sucesso
 				JOptionPane.showMessageDialog(null,"Conta cadastrado com sucesso.","Sucesso",2);
-			}else if(recebido.equals("camponaopreenchido")){//caso o campo não tenha sido preenchido
+			}else if(resultado.equals("camponaopreenchido")){//caso o campo não tenha sido preenchido
 				JOptionPane.showMessageDialog(null,"Campo não foi preenchido.","Erro",2);
-			}else if(recebido.equals("clientenaoencontrado")){//caso receba erro de cliente nao foi encontrado
+			}else if(resultado.equals("clientenaoencontrado")){//caso receba erro de cliente nao foi encontrado
 				JOptionPane.showMessageDialog(null,"Cliente nao foi encontrado","Erro",2);
-			}else if(recebido.equals("senhainvalida")){//caso receba erro de senha invalida
+			}else if(resultado.equals("senhainvalida")){//caso receba erro de senha invalida
 				JOptionPane.showMessageDialog(null,"Senha não é valida","Erro",2);
-			}else if(recebido.equals("clientenulo")){//caso receba erro de cliente nulo
+			}else if(resultado.equals("clientenulo")){//caso receba erro de cliente nulo
 				JOptionPane.showMessageDialog(null,"Erro interno cliente nulo","Erro",2);
-			}else if(recebido.equals("clienteJuridicoContaCorrente")){//caso receba erro de cliente juridico com conta poupança
-				JOptionPane.showMessageDialog(null,"Erro interno cliente juridico não pode ter conta poupança","Erro",2);
+			}else if(resultado.equals("clienteJuridicoContaCorrente")){//caso receba erro de cliente juridico com conta poupança
+				JOptionPane.showMessageDialog(null,"Cliente juridico não pode ter conta poupança","Erro",2);
 			}
 
 			JOptionPane.showMessageDialog(null, "Recebido: " + resultado);//exibe o resultado
@@ -1291,13 +1295,13 @@ public class BancoClientGUI {
 				}else{
 					rdbtnJuridicaAcesso.setSelected(true);
 				}
-			}else if(recebido.equals("containvalidacliente")){//caso receba erro de cliente errado para a conta
+			}else if(resultado.equals("containvalidacliente")){//caso receba erro de cliente errado para a conta
 				JOptionPane.showMessageDialog(null,"Este cliente não possui essa conta","Erro",2);
-			}else if(recebido.equals("camponaopreenchido")){//caso receba erro de campo não preenchido
+			}else if(resultado.equals("camponaopreenchido")){//caso receba erro de campo não preenchido
 				JOptionPane.showMessageDialog(null,"Campo não foi preenchido","Erro",2);
-			}else if(recebido.equals("contanaoencontrada")){//caso receba erro de conta não encontrada
+			}else if(resultado.equals("contanaoencontrada")){//caso receba erro de conta não encontrada
 				JOptionPane.showMessageDialog(null,"Conta não foi encontrada","Erro",2);
-			}else if(recebido.equals("agenciaincorreta")){//caso receba erro de agencia incorreta
+			}else if(resultado.equals("agenciaincorreta")){//caso receba erro de agencia incorreta
 				JOptionPane.showMessageDialog(null,"Agencia incorreta","Erro",2);
 			}
 
@@ -1344,15 +1348,15 @@ public class BancoClientGUI {
 			if(resultado.equals("concluido")){
 				String valorAtual = itera.next();//recebe o falor atual do titular
 				JOptionPane.showMessageDialog(null, "Valor total: " + valorAtual);
-			}else if(recebido.equals("erroDouble")){//caso receba erro de valor incorreto
+			}else if(resultado.equals("erroDouble")){//caso receba erro de valor incorreto
 				JOptionPane.showMessageDialog(null,"Valor incorreto deve ser exemplo 10.0","Erro",2);
-			}else if(recebido.equals("contanaoencontrada")){//caso receba erro de conta nao econtrada
+			}else if(resultado.equals("contanaoencontrada")){//caso receba erro de conta nao econtrada
 				JOptionPane.showMessageDialog(null,"Conta não foi encontrada","Erro",2);
-			}else if(recebido.equals("camponaopreenchido")){//caso receba erro de campo não preenchido
+			}else if(resultado.equals("camponaopreenchido")){//caso receba erro de campo não preenchido
 				JOptionPane.showMessageDialog(null,"Campo não foi preenchido","Erro",2);
-			}else if(recebido.equals("clientenaoencontrado")){//caso receba erro de cliente não encontrado
+			}else if(resultado.equals("clientenaoencontrado")){//caso receba erro de cliente não encontrado
 				JOptionPane.showMessageDialog(null,"Cliente não encontrado","Erro",2);
-			}else if(recebido.equals("agenciaincorreta")){//caso receba erro de agencia incorreta
+			}else if(resultado.equals("agenciaincorreta")){//caso receba erro de agencia incorreta
 				JOptionPane.showMessageDialog(null,"Agencia incorreta","Erro",2);
 			}
 
@@ -1371,6 +1375,12 @@ public class BancoClientGUI {
 	 * Metodo de transferir
 	 */
 	private void transferir(){
+		textFieldAcessoSaldo.setText("");
+		btnAdicionarTitular.setEnabled(false);
+		rdbtnCorrenteAcesso.setSelected(false);//reinicia os radio buttons
+		rdbtnPoupanaAcesso.setSelected(false);
+		rdbtnFisicaAcesso.setSelected(false);
+		rdbtnJuridicaAcesso.setSelected(false);
 		try{
 			//Cria o Socket para buscar o arquivo no servidor 
 			Socket rec = new Socket(ip,porta);
@@ -1407,17 +1417,17 @@ public class BancoClientGUI {
 			if(resultado.equals("concluido")){//se houve sucesso
 				String valorAtual = itera.next();
 				JOptionPane.showMessageDialog(null, "Valor atual do Remetente: " + valorAtual);//exibe o valor atual do cliente
-			}else if(recebido.equals("contanaoencontrada")){//caso receba erro de conta não encontrada
+			}else if(resultado.equals("contanaoencontrada")){//caso receba erro de conta não encontrada
 				JOptionPane.showMessageDialog(null,"Conta não foi encontrada","Erro",2);
-			}else if(recebido.equals("camponaopreenchido")){//caso receba erro de campo não preenchido
+			}else if(resultado.equals("camponaopreenchido")){//caso receba erro de campo não preenchido
 				JOptionPane.showMessageDialog(null,"Campo não preenchido","Erro",2);
-			}else if(recebido.equals("clientenaoencontrado")){//caso receba erro de cliente não encontrado
+			}else if(resultado.equals("clientenaoencontrado")){//caso receba erro de cliente não encontrado
 				JOptionPane.showMessageDialog(null,"Cliente não encontrado","Erro",2);
-			}else if(recebido.equals("agenciaincorreta")){//caso receba erro de agencia não encontrada
+			}else if(resultado.equals("agenciaincorreta")){//caso receba erro de agencia não encontrada
 				JOptionPane.showMessageDialog(null,"Agencia não encontrada","Erro",2);
-			}else if(recebido.equals("conflitonaconta")){//caso receba erro de conflito na conta
+			}else if(resultado.equals("conflitonaconta")){//caso receba erro de conflito na conta
 				JOptionPane.showMessageDialog(null,"Conflito na conta","Erro",2);
-			}else if(recebido.equals("saldoinsuficiente")){//caso receba erro de saldo insuficiente
+			}else if(resultado.equals("saldoinsuficiente")){//caso receba erro de saldo insuficiente
 				JOptionPane.showMessageDialog(null,"Saldo insuficiente","Erro",2);
 			}
 
@@ -1466,15 +1476,15 @@ public class BancoClientGUI {
 			String resultado = itera.next();
 			if(resultado.equals("concluido")){
 				JOptionPane.showMessageDialog(null, "Novo Titular Adicionado");//avisa que foi concluido
-			}else if(recebido.equals("contaonaoencontrada")){//caso receba erro de conta não encontrada
+			}else if(resultado.equals("contaonaoencontrada")){//caso receba erro de conta não encontrada
 				JOptionPane.showMessageDialog(null,"Conta não encontrada","Erro",2);
-			}else if(recebido.equals("camponaopreenchido")){//caso receba erro de campo não preenchido
+			}else if(resultado.equals("camponaopreenchido")){//caso receba erro de campo não preenchido
 				JOptionPane.showMessageDialog(null,"Campo não preenchido","Erro",2);
-			}else if(recebido.equals("agenciaincorreta")){//agencia incorreta
+			}else if(resultado.equals("agenciaincorreta")){//agencia incorreta
 				JOptionPane.showMessageDialog(null,"Agencia incorreta","Erro",2);
-			}else if(recebido.equals("clientenaoencontrado")){//caso receba erro de cliente não encontrado
+			}else if(resultado.equals("clientenaoencontrado")){//caso receba erro de cliente não encontrado
 				JOptionPane.showMessageDialog(null,"Cliente não encontrado","Erro",2);
-			}else if(recebido.equals("titularjacadastrado")){//caso receba erro de titular ja cadastrado
+			}else if(resultado.equals("titularjacadastrado")){//caso receba erro de titular ja cadastrado
 				JOptionPane.showMessageDialog(null,"Titular ja cadastrado","Erro",2);
 			}
 

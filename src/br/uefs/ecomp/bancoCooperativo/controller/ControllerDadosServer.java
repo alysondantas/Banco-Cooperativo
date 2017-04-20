@@ -55,9 +55,9 @@ public class ControllerDadosServer {
 
 	/**
 	 * Metodo que rece o deposito para uma conta
-	 * @param num
-	 * @param agencia
-	 * @param valor
+	 * @param num Numero da conta
+	 * @param agencia Agencia da conta
+	 * @param valor Valor a depositar
 	 * @return
 	 * @throws FileNotFoundException
 	 * @throws ClassNotFoundException
@@ -83,12 +83,12 @@ public class ControllerDadosServer {
 
 	/**
 	 * Metodo de receber as transações.
-	 * @param numero1
-	 * @param agencia1
-	 * @param numero2
-	 * @param agencia2
-	 * @param valor
-	 * @param cpfcnpj
+	 * @param numero1 Numero da conta remetente
+	 * @param agencia1 Agencia da conta remetente
+	 * @param numero2 Numero da conta destino
+	 * @param agencia2 Numero da conta destino
+	 * @param valor Valor de transferencia
+	 * @param cpfcnpj Cpf ou Cpnj do cliente remtente
 	 * @return
 	 * @throws CampoVazioException
 	 * @throws FileNotFoundException
@@ -146,16 +146,16 @@ public class ControllerDadosServer {
 
 	/**
 	 * Metodo que cadastra novos clientes
-	 * @param nome
-	 * @param data
-	 * @param cpfcnpj
-	 * @param sexo
-	 * @param uf
-	 * @param cidade
-	 * @param rua
-	 * @param num
-	 * @param fisicaJuridica
-	 * @param senha
+	 * @param nome Nome do cliente
+	 * @param data Data do cliente
+	 * @param cpfcnpj Cpf ou Cnpj do cliente
+	 * @param sexo Sexo caso seja fisico
+	 * @param uf Estado
+	 * @param cidade Cidade
+	 * @param rua Rua
+	 * @param num Numero
+	 * @param fisicaJuridica Verificador se é pessoa fisica ou juridica
+	 * @param senha Senha de acesso
 	 * @throws CampoVazioException
 	 * @throws FileNotFoundException
 	 * @throws IOException
@@ -185,16 +185,16 @@ public class ControllerDadosServer {
 
 	/**
 	 * Metodo que edita o cliente
-	 * @param nome Nome do cliente
-	 * @param data
-	 * @param cpfcnpj
-	 * @param sexo
-	 * @param uf
-	 * @param cidade
-	 * @param rua
-	 * @param num
-	 * @param senha
-	 * @param senhaNova
+	 * @param nome Nome do cliente de edição
+	 * @param data Data de edição
+	 * @param cpfcnpj CPF ou Cnpj do cliente
+	 * @param sexo Sexo de edição
+	 * @param uf Estado de edição
+	 * @param cidade Cidade de edição
+	 * @param rua Rua de edição
+	 * @param num Numero de edição
+	 * @param senha Senha do cliente
+	 * @param senhaNova Senha de edição
 	 * @throws CampoVazioException
 	 * @throws FileNotFoundException
 	 * @throws ClassNotFoundException
@@ -223,9 +223,9 @@ public class ControllerDadosServer {
 
 	/**
 	 * Metdodo que cadastra a conta
-	 * @param cpfcnpj
-	 * @param corrente
-	 * @param senha
+	 * @param cpfcnpj Cpf ou Cnpj do titular
+	 * @param corrente Verificador se é corrente ou não
+	 * @param senha Senha do titular
 	 * @throws CampoVazioException
 	 * @throws FileNotFoundException
 	 * @throws ClassNotFoundException
@@ -269,8 +269,8 @@ public class ControllerDadosServer {
 
 	/**
 	 * Metodo que recupera o cliente
-	 * @param cpfCnpj
-	 * @param senha
+	 * @param cpfCnpj CPF ou Cnpj do cliente
+	 * @param senha Senha do cliente
 	 * @return
 	 * @throws FileNotFoundException
 	 * @throws IOException
@@ -291,8 +291,8 @@ public class ControllerDadosServer {
 
 	/**
 	 * Metodo que recupera a conta
-	 * @param numConta
-	 * @param agencia
+	 * @param numConta Numero da conta
+	 * @param agencia Agencia da conta
 	 * @return
 	 * @throws CampoVazioException
 	 * @throws FileNotFoundException
@@ -320,10 +320,10 @@ public class ControllerDadosServer {
 
 	/**
 	 * Metodo que adiciona um titular a uma conta
-	 * @param numConta
-	 * @param agencia
-	 * @param cpfCnpj
-	 * @param cpfCnpj2
+	 * @param numConta Numero da conta
+	 * @param agencia Agencia da conta
+	 * @param cpfCnpj CPF ou CNPJ do titular atual
+	 * @param cpfCnpj2 CPF ou CNPJ do novo titular
 	 * @throws FileNotFoundException
 	 * @throws ClassNotFoundException
 	 * @throws CampoVazioException
@@ -376,7 +376,7 @@ public class ControllerDadosServer {
 
 	/**
 	 * Metodo que escreve o arquivo conta
-	 * @param conta
+	 * @param conta Conta
 	 * @throws FileNotFoundException
 	 * @throws IOException
 	 */
@@ -390,7 +390,7 @@ public class ControllerDadosServer {
 
 	/**
 	 * Metodo que escreve o arquivo cliente
-	 * @param cliente
+	 * @param cliente Cliente
 	 * @throws FileNotFoundException
 	 * @throws IOException
 	 */

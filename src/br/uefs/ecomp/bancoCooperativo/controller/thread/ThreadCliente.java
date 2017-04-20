@@ -385,12 +385,12 @@ public class ThreadCliente extends Thread {
 		}
 
 		catch(Exception e) {//caso alguma exceção seja lançada
-			System.out.println("Excecao ocorrida na thread: " + e);
-			textField.setText(textField.getText() + "Excecao ocorrida na thread: " + e);//caso alguma exceção desconheciada seja lançada ela encerra a thread e é exibida
+			System.out.println("Excecao ocorrida na thread: " + e.getMessage());
+			textField.setText(textField.getText() + "\nExcecao ocorrida na thread: " + e.getMessage());//caso alguma exceção desconheciada seja lançada ela encerra a thread e é exibida
 			try {
 				cliente.close();   //finaliza o cliente
 			}catch(Exception ec) {
-				textField.setText(textField.getText() + "Erro fatal cliente não finalizado: " + e);//cliente não foi finalizado
+				textField.setText(textField.getText() + "\nErro fatal cliente não finalizado: " + e.getMessage());//cliente não foi finalizado
 			}     
 		}
 	}

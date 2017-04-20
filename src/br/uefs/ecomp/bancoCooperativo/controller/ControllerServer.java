@@ -19,6 +19,9 @@ public class ControllerServer {
 	private ThreadCliente thread;
 	private static ControllerServer unicaInstancia;
 	
+	/**
+	 * Construtor
+	 */
 	private ControllerServer(){
 		//controller.getInstance();
 	}
@@ -42,8 +45,8 @@ public class ControllerServer {
 	
 	/**
 	 * Metodo que inicia o servidor
-	 * @param port
-	 * @param textField
+	 * @param port Porta para o servidor
+	 * @param textField TextField do log
 	 * @return
 	 */
 	public String iniciaServer(int port, JTextArea textField){
